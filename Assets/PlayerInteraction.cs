@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -11,14 +13,27 @@ public class PlayerInteraction : MonoBehaviour
     private Transform targetObject;
 
     private int score = 0;
+    public Text scoreText;
+
+    int totalObjects;
+    int collidedObjs = 0;
+    private bool isGameComplete = false;
+    public GameObject completionAnimation;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        totalObjects = GameObject.FindGameObjectsWithTag("Cube").Length +
+            GameObject.FindGameObjectsWithTag("Sphere").Length +
+             GameObject.FindGameObjectsWithTag("Cylinder").Length +
+              GameObject.FindGameObjectsWithTag("Capsule").Length;
+
     }
 
     void Update()
     {
+        UpdateScoreUI(); 
+
         // Rotate the player character towards the target object
         if (targetObject != null)
         {
@@ -32,6 +47,12 @@ public class PlayerInteraction : MonoBehaviour
     {
         Material collidedMaterial = collision.gameObject.GetComponent<Renderer>().material;
         string materialName = collidedMaterial.name;
+
+        if (materialName.Contains("green"))
+            { IncreaseScore(10); }
+        if (materialName.Contains("red"))
+        { DecreaseScore(5); }
+            
 
 
         // Use the material name as needed
@@ -54,7 +75,41 @@ public class PlayerInteraction : MonoBehaviour
             audioSource.PlayOneShot(capsuleCollisionSound);
         }
 
+        collidedObjs++;
+        if(collidedObjs >= totalObjects)
+        {
+            onCompleteGame();
+        }
+
     }
+    void IncreaseScore(int points)
+    {
+        score += points;
+        UpdateScoreUI();
+    }
+
+    void DecreaseScore(int points)
+    {
+        score -= points;
+        if (score < 0)
+        {
+            score = 0; // Ensure score does not go negative
+        }
+        UpdateScoreUI();
+    }
+
+    void UpdateScoreUI()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
+
+    void onCompleteGame()
+    {
+        isGameComplete = true;
+        completionAnimation.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     //void OnTriggerEnter(Collider other)
     //{
     //    // Play a specific sound when colliding with a game object
