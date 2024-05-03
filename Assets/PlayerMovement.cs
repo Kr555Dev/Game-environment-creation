@@ -2,21 +2,37 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Animator animator;
+    public float moveSpeed = 5f;
+    public Animator animator;
+    private Transform cameraTransform;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        // Get the main camera's transform
+        cameraTransform = Camera.main.transform;
     }
 
     void Update()
     {
-        // Get input from player (e.g., WASD keys)
+        // Get input for character movement
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        // Set animator parameters based on input
-        animator.SetFloat("SpeedX", horizontalInput);
-        animator.SetFloat("SpeedY", verticalInput);
+        // Calculate movement direction relative to the camera's forward direction
+        Vector3 cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 moveDirection = cameraForward * verticalInput + cameraTransform.right * horizontalInput;
+
+        // Move the character
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+
+        // Play animation based on movement
+        if (moveDirection.magnitude > 0)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
     }
 }

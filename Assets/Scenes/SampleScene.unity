@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 239800691}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Cylinder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 239800689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 2.07, z: 12.244}
+  m_LocalPosition: {x: 5.17, y: 2.07, z: 7.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 281451020}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 281451018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.52, z: 15.92}
+  m_LocalPosition: {x: 5.17, y: 1.52, z: 14.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 550573889}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,8 +601,8 @@ Transform:
   m_GameObject: {fileID: 550573887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.52, z: 7.53}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalPosition: {x: 5.17, y: 2.03, z: -8.33}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 702767243}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 580082148}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,7 +706,7 @@ Transform:
   m_GameObject: {fileID: 580082146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.52, z: 14.042}
+  m_LocalPosition: {x: 5.17, y: 1.52, z: -1.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 769273311}
   m_Layer: 0
   m_Name: Capsule (1)
-  m_TagString: Untagged
+  m_TagString: Capsule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,7 +981,7 @@ Transform:
   m_GameObject: {fileID: 769273309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.99, z: 2.61}
+  m_LocalPosition: {x: 5.17, y: 1.99, z: 5.16}
   m_LocalScale: {x: -0.3474, y: 1.0349, z: 0.28636}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 770909087}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Capsule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1088,7 +1088,7 @@ Transform:
   m_GameObject: {fileID: 770909085}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.99, z: 9.98}
+  m_LocalPosition: {x: 5.17, y: 1.99, z: 10.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1312,8 +1312,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023212545}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 100
+  m_Drag: 20
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1343,6 +1343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90529b4a942c0464989f0e07d7d42dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2.55
+  animator: {fileID: 1023212546}
 --- !u!114 &1023212550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,6 +1357,127 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184e86d8d4fbe63498b44bab946484a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeCollisionSound: {fileID: 8300000, guid: 63f879bd38fdab144afd59dee90d8757, type: 3}
+  sphereCollisionSound: {fileID: 8300000, guid: af9e3f1c29a70ad49bda1ca8d1067635, type: 3}
+  cylinderCollisionSound: {fileID: 8300000, guid: 4673923248800434bb8f0f3c774eaa9b, type: 3}
+  capsuleCollisionSound: {fileID: 8300000, guid: e591d3aed936b634b9bd6c1899ad190c, type: 3}
+--- !u!65 &1023212551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023212545}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.708653, y: 1.476614, z: 0.65685755}
+  m_Center: {x: -0.009711504, y: 1.050147, z: 0.035609156}
+--- !u!82 &1023212552
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023212545}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1059182679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,7 +1807,7 @@ GameObject:
   - component: {fileID: 1621782029}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1698,7 +1821,7 @@ Transform:
   m_GameObject: {fileID: 1621782027}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 2.24, z: 4.51}
+  m_LocalPosition: {x: 5.17, y: 2.06, z: -4.15}
   m_LocalScale: {x: -2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1850,6 +1973,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6b055eeebd55ab47a9c831e4d46e1f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1023212550}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6b055eeebd55ab47a9c831e4d46e1f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1023212551}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6b055eeebd55ab47a9c831e4d46e1f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1023212552}
   m_SourcePrefab: {fileID: 100100000, guid: f6b055eeebd55ab47a9c831e4d46e1f7, type: 3}
 --- !u!1 &1952779630
 GameObject:
@@ -1970,7 +2099,7 @@ GameObject:
   - component: {fileID: 2094459889}
   m_Layer: 0
   m_Name: Cylinder (1)
-  m_TagString: Untagged
+  m_TagString: Cylinder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1984,7 +2113,7 @@ Transform:
   m_GameObject: {fileID: 2094459887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 3.3564, z: 0.85}
+  m_LocalPosition: {x: 5.17, y: 3.3564, z: 1.92}
   m_LocalScale: {x: -2, y: 2.2864, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []

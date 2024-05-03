@@ -10,6 +10,8 @@ public class PlayerInteraction : MonoBehaviour
     private AudioSource audioSource;
     private Transform targetObject;
 
+    private int score = 0;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -26,22 +28,53 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        // Play a specific sound when colliding with a game object
-        if (other.CompareTag("Cube"))
+        Material collidedMaterial = collision.gameObject.GetComponent<Renderer>().material;
+        string materialName = collidedMaterial.name;
+
+
+        // Use the material name as needed
+        Debug.Log("Collided with material: " + materialName);
+
+        if (collision.gameObject.CompareTag("Cube"))
         {
-            audioSource.PlayOneShot(cubeCollisionSound);
+            audioSource.PlayOneShot(cubeCollisionSound); 
         }
-        else if (other.CompareTag("Sphere"))
+        if (collision.gameObject.CompareTag("Sphere"))
         {
             audioSource.PlayOneShot(sphereCollisionSound);
         }
-        else if (other.CompareTag("Cylinder"))
+        if (collision.gameObject.CompareTag("Cylinder"))
         {
             audioSource.PlayOneShot(cylinderCollisionSound);
         }
+        if (collision.gameObject.CompareTag("Capsule"))
+        {
+            audioSource.PlayOneShot(capsuleCollisionSound);
+        }
+
     }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    // Play a specific sound when colliding with a game object
+    //    if (other.CompareTag("Cube"))
+    //    {
+    //        audioSource.PlayOneShot(cubeCollisionSound);
+    //    }
+    //    else if (other.CompareTag("Sphere"))
+    //    {
+    //        audioSource.PlayOneShot(sphereCollisionSound);
+    //    }
+    //    else if (other.CompareTag("Cylinder"))
+    //    {
+    //        audioSource.PlayOneShot(cylinderCollisionSound);
+    //    }
+    //    else if (other.CompareTag("Capsule"))
+    //    {
+    //        audioSource.PlayOneShot(capsuleCollisionSound);
+    //    }
+    //}
 
     void OnMouseEnter()
     {
